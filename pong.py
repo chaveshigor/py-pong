@@ -1,19 +1,17 @@
 import sys, pygame
 from pygame.locals import*
+from lib.screen import Screen
 
-width = 1366                    #screen width
-height = 768                    #screen height
-screen_color = (10, 10, 10)     #screen background color
-block_color = (255, 255, 255)
+game_screen = Screen(width=1366, height=768, color=(10, 10, 10))
 
 def main():
-    screen=pygame.display.set_mode((width,height))
-    screen.fill(screen_color)
-    pygame.display.flip()
+  screen = pygame.display.set_mode((game_screen.width, game_screen.height))
+  screen.fill(game_screen.color)
+  pygame.display.flip()
 
-    while True:
-        for events in pygame.event.get():
-            if events.type == QUIT:
-                sys.exit(0)
+  while True:
+    for events in pygame.event.get():
+      if events.type == QUIT:
+        sys.exit(0)
 
 main()
