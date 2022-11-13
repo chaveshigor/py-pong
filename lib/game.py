@@ -1,7 +1,7 @@
 from lib.pygame.engine import Engine
 from lib.pygame.events import Events
 
-from lib.player import Player
+from lib.entities.player import Player
 from lib.screen import Screen
 from lib.builder import Builder
 
