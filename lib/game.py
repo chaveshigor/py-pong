@@ -3,6 +3,7 @@ from lib.pygame.events import Events
 
 from lib.entities.player import Player
 from lib.entities.wall import Wall
+from lib.entities.ball import Ball
 
 from lib.screen import Screen
 from lib.builder import Builder
@@ -36,4 +37,6 @@ class Game:
     top_wall = Wall(initial_position=(50, 10), screen=self.game_windows)
     bottom_wall = Wall(initial_position=(50, self.game_windows.height - 10 - Wall.HEIGHT), screen=self.game_windows)
 
-    return [player_1, player_2, top_wall, bottom_wall]
+    ball = Ball(initial_position=(int(self.game_windows.width/2), int(self.game_windows.height/2)))
+
+    return [player_1, player_2, top_wall, bottom_wall, ball]
