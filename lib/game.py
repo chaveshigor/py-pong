@@ -2,6 +2,8 @@ from lib.pygame.engine import Engine
 from lib.pygame.events import Events
 
 from lib.entities.player import Player
+from lib.entities.wall import Wall
+
 from lib.screen import Screen
 from lib.builder import Builder
 
@@ -29,5 +31,9 @@ class Game:
 
   def game_elements(self):
     player_1 = Player(initial_position=(50, 250))
+    player_2 = Player(initial_position=(self.game_windows.width - 50 - Player.WIDTH, 250))
 
-    return [player_1]
+    top_wall = Wall(initial_position=(50, 10), screen=self.game_windows)
+    bottom_wall = Wall(initial_position=(50, self.game_windows.height - 10 - Wall.HEIGHT), screen=self.game_windows)
+
+    return [player_1, player_2, top_wall, bottom_wall]

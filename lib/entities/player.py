@@ -1,11 +1,13 @@
 class Player:
+  WIDTH = 30
+  HEIGHT = 200
 
   def __init__(self, initial_position):
     self.shape = 'rectangle'
     self.color = (250, 250, 250)
     self.initial_position = initial_position
-    self.width = 30
-    self.height = 200
+    self.width = Player.WIDTH
+    self.height = Player.HEIGHT
     self.location = self.set_location()
     self.screen_position = (self.initial_position[0], self.initial_position[1])
 
